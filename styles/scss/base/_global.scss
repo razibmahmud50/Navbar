@@ -1,0 +1,194 @@
+// Theme Name:
+// Theme URI:
+// Author:
+// Author URI: https://
+// Version: 1.0
+
+//Global Style
+html{
+	scroll-behavior: smooth;
+}
+body{
+	font-family: $body-font;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: $header-font;
+}
+h1{
+    font-size: 72px;
+}
+h2{
+    font-size: 48px;
+}
+h3{
+    font-size: 36px;
+}
+h4{
+    font-size: 32px;
+}
+h5{
+    font-size: 22px;
+}
+h6{
+    font-size: 18px;
+}
+p{
+	font-size: 16px;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+img{
+	max-width: 100%;
+}
+ul{
+   list-style: none;
+   padding-left: 0;
+}
+:focus{
+	box-shadow: none;
+}
+:disabled {
+       cursor: not-allowed;
+}
+// utilities
+//font
+.fs-10{
+    font-size: 10px!important;
+}
+.fs-12{
+    font-size: 12px!important;
+}
+.fs-14{
+    font-size: 14px!important;
+}
+.fs-16{
+    font-size: 16px!important;
+}
+.fs-18{
+    font-size: 18px!important;
+}
+.fs-20{
+    font-size: 20px!important;
+}
+.fs-22{
+    font-size: 22px!important;
+}
+.fs-24{
+    font-size: 24px!important;
+}
+.fs-26{
+    font-size: 26px!important;
+}
+.fs-28{
+    font-size: 28px!important;
+}
+.fs-30{
+    font-size: 30px!important;
+}
+.fs-32{
+    font-size: 32px!important;
+}
+.fs-34{
+    font-size: 34px!important;
+}
+.fs-36{
+    font-size: 36px!important;
+}
+.fs-38{
+    font-size: 38px!important;
+}
+.fs-40{
+    font-size: 40px!important;
+}
+.fs-42{
+    font-size: 42px!important;
+}
+.fs-44{
+    font-size: 44px!important;
+}
+.fs-46{
+    font-size: 46px!important;
+}
+.fs-48{
+    font-size: 48px!important;
+}
+.fs-50{
+    font-size: 50px!important;
+}
+.fw-300{
+    font-weight: 300!important;
+}
+.fw-400{
+    font-weight: 400!important;
+}
+.fw-500{
+    font-weight: 500!important;
+}
+.fw-600{
+    font-weight: 600!important;
+}
+.fw-700{
+    font-weight: 700!important;
+}
+
+//border
+.br-1{
+    border-radius: 1px!important;
+}
+.br-2{
+    border-radius: 2px!important;
+}
+.br-3{
+    border-radius: 3px!important;
+}
+.br-4{
+    border-radius: 4px!important;
+}
+.br-5{
+    border-radius: 5px!important;
+}
+
+// generic class
+.disabled {
+    cursor: not-allowed!important;
+}
+.bg-unset {
+    background: unset!important;
+}
+.bg-transparent {
+    background: transparent!important;
+}
+.hidden {
+    visibility: hidden!important;
+}
+.cursor-pointer {
+    cursor: pointer!important;
+}
+//flex
+.flex-center-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-between-center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-start-center{
+    display: flex;
+    align-items: center;
+}
+.flex-start-end{
+    display: flex;
+    align-items: flex-end;
+}
+.flex-end-center{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
