@@ -1,45 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-   <meta charset="utf-8">
-   <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-   <title>Navigation</title>
-   <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive dropdown menu with Vanilla JavaScript and Webpack 5</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="./styles/css/style.css">
 </head>
+<body>  
 
-<nav class="r-navbar">
-     <a class="r-navbar-brand" href="#">Navbar</a>
-     <button class="r-navbar-toggler" type="button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-       </svg>
-     </button>
-     <div class="r-navbar-collapse">
-       <ul class="r-navbar-nav-ul">
-         <li class="r-nav-item">
-           <a class="r-nav-link active" aria-current="page" href="#">Home</a>
-         </li>
-         <li class="r-nav-item">
-           <a class="r-nav-link" href="#">Link</a>
-         </li>
-         <li class="r-nav-item has-submenu">Dropdown
-           <ul class="submenu-list">
-            <li class="r-nav-item">
-               <a class="r-nav-link active" aria-current="page" href="#">Home</a>
-             </li>
-           </ul>
-         </li>
-         <li class="nav-item">
-           <a class="nav-link disabled">Disabled</a>
-         </li>
-       </ul>
-     </div>
- </nav>
-   
-
-   <!-- Custom js -->
-   <script src="scripts/main.js"></script>
+<header class="nav">
+  <div class="nav-container">
+    <div class="nav-mobile">
+      <div class="nav-logo">LOGO</div>
+      <div class="nav-btn">
+        <a aria-label="Mobile menu" class="nav-toggle"><span></span><span class="mrg"></span><span class="mrg"></span></a>
+      </div>
+    </div>
+      <nav class="menu-toggle">     
+        <ul class="nav-menu">
+          <li><a href="">Menu item</a></li>
+          <li><a href="">Menu item</a></li>
+          <li class="dropdown"><a>Dropdown</a>
+            <ul class="2">
+              <li class="dropdown"><a>2nd level dropdown</a>
+                <ul class="3">
+                  <li class="dropdown third-level"><a>Third level dropdown</a>
+                    <ul class="4">
+                      <li><a href="">Dropdown item 4.1</a></li>
+                      <li><a href="">Dropdown item 4.2</a></li>
+                      <li><a href="">Dropdown item 4.3</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="">Dropdown item 3.1</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li><a href="">Dropdown item 3.2</a></li>
+                  <li class="dropdown third-level"><a>Third level dropdown</a>
+                    <ul>
+                      <li><a href="">Dropdown item 4.1</a></li>
+                      <li><a href="">Dropdown item 4.2</a></li>
+                      <li><a href="">Dropdown item 4.3</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="">Dropdown item 2.2</a></li>
+              <li><a href="">Dropdown item 2.2</a></li>
+              <li><a href="">Dropdown item 2.3</a></li>
+              <li><a href="">Dropdown item 2.33</a></li>
+              <li><a href="">Dropdown item 2.4</a></li>
+            </ul>
+          </li>
+          <li><a href="">Menu item</a></li>
+          <li><a href="">Menu item</a></li>
+          <li><a href="">Menu item</a></li>
+        </ul>   
+      </nav>
+  </div>
+</header>
+<script src="./scripts/main.js"></script>
 </body>
 </html>
-
