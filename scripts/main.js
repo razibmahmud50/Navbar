@@ -1,14 +1,3 @@
-function isElementInViewport (el) {
-  var rect = el.getBoundingClientRect();
-  return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&     
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-
 // Prevent showing animation on window resize
 let resizeTimer;
 window.addEventListener("resize", () => {
@@ -29,18 +18,38 @@ navToggle.addEventListener('click', function (e) {
   menuToggle.classList.toggle('active');
   e.stopPropagation();
 });
-
-
-
-// Dropdown toogle on mobile
+//get all sibling
+function getAllSiblings(element, parent) {
+  const children = [...parent.children];
+  return children.filter(child => child !== element);
+}
 
 window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll(".dropdown a").forEach(el => {
-    el.addEventListener('click', function () {
-      this.nextElementSibling.classList.toggle('show');
-      this.parentNode.classList.toggle('active');
+  document.querySelectorAll(".dropdown").forEach(el => {
+    el.addEventListener('click', function (e) {
+      e.stopPropagation()
+      this.lastElementChild.classList.toggle('show');
+      this.classList.toggle('active');
+      // remove child element active class
+      let childrenOfUl =  [].slice.call(this.lastElementChild.children);
+      childrenOfUl.forEach((childItem)=>{
+        childItem.classList.remove("active")
+      })
+      el.lastElementChild.querySelectorAll("ul").forEach((item)=>{
+        if(item.classList.contains("show")){
+          item.classList.remove("show")
+        }
+      })
+       console.log(this.lastElementChild.children)
+      //remove all active class from sibling
+      let allSibling = getAllSiblings(this, this.parentElement)
+      allSibling.forEach((sibling)=>{
+        if(sibling.classList.contains("active")){
+          sibling.classList.remove("active")
+          sibling.lastElementChild.classList.remove('show');
+        }
+      })
 
-console.log(el.querySelectorAll(".active"))
       let nextUlRightPosition = this.nextElementSibling.getBoundingClientRect().right
       let nextUlBottomtPosition = this.nextElementSibling.getBoundingClientRect().bottom
       let documentWidth = document.documentElement.clientWidth
