@@ -18,11 +18,24 @@ navToggle.addEventListener('click', function (e) {
   menuToggle.classList.toggle('active');
   e.stopPropagation();
 });
+
 //get all sibling
 function getAllSiblings(element, parent) {
   const children = [...parent.children];
   return children.filter(child => child !== element);
 }
+
+//destroy menu
+let navDestroy = ()=>{
+  document.querySelectorAll("nav-menu .active, .nav-menu .show").forEach((activeItem)=>{
+    activeItem.classList.remove("active")
+    activeItem.classList.remove("show")
+  })
+}
+
+window.addEventListener("click", ()=>{
+  navDestroy()
+})
 
 window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll(".dropdown").forEach(el => {
