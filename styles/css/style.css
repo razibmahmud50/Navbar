@@ -268,9 +268,12 @@ ul {
   font-weight: 700;
   color: #ffffff;
 }
-@media (min-width: 1200px) {
+.nav .nav-container .nav-mobile .nav-btn {
+  display: none;
+}
+@media (max-width: 1199px) {
   .nav .nav-container .nav-mobile .nav-btn {
-    display: none;
+    display: block;
   }
 }
 .nav .nav-container .nav-mobile .nav-btn .nav-toggle {
@@ -304,15 +307,16 @@ ul {
   transform: rotate(-45deg) translate(6.2px, -6.2px);
 }
 .nav .nav-container .menu-toggle {
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
+  display: flex;
+  max-height: 100vh;
+  overflow: visible;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1199px) {
   .nav .nav-container .menu-toggle {
-    display: flex !important;
-    max-height: 100vh;
-    overflow: visible;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
   }
 }
 .nav .nav-container .menu-toggle.active {
@@ -321,14 +325,13 @@ ul {
 }
 .nav .nav-container .menu-toggle .nav-menu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 0;
   max-height: 100%;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1199px) {
   .nav .nav-container .menu-toggle .nav-menu {
-    flex-direction: row;
-    overflow: visible;
+    flex-direction: column;
   }
 }
 .nav .nav-container .menu-toggle .nav-menu li {
@@ -337,28 +340,32 @@ ul {
   padding: 12px;
   cursor: pointer;
   background-color: #0984e3;
-  border: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1199px) {
   .nav .nav-container .menu-toggle .nav-menu li {
-    white-space: nowrap;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #fff;
+    border: 1px solid #fff;
+    border-bottom: 0;
   }
 }
 .nav .nav-container .menu-toggle .nav-menu li:hover {
   opacity: 0.9;
+}
+@media (max-width: 1199px) {
+  .nav .nav-container .menu-toggle .nav-menu li:last-child {
+    border-bottom: 1px solid #fff;
+  }
 }
 .nav .nav-container .menu-toggle .nav-menu li a {
   display: block;
   font-size: 1rem;
   color: #fff;
   text-decoration: none;
+  padding-right: 20px;
 }
-@media (min-width: 1200px) {
-  .nav .nav-container .menu-toggle .nav-menu .dropdown {
-    position: relative;
-  }
+.nav .nav-container .menu-toggle .nav-menu .dropdown {
+  position: relative;
 }
 .nav .nav-container .menu-toggle .nav-menu .dropdown > a::after {
   content: "";
@@ -368,6 +375,8 @@ ul {
   height: 14px;
   background-size: cover;
   display: inline-block;
+  position: absolute;
+  right: 10px;
 }
 .nav .nav-container .menu-toggle .nav-menu .dropdown ul {
   display: flex;
@@ -377,25 +386,25 @@ ul {
   max-height: 0px;
   display: none;
   transition: all 0.4s;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1199px) {
   .nav .nav-container .menu-toggle .nav-menu .dropdown ul {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    transition: all 0.4s ease;
+    position: static;
+    margin-top: 12px;
   }
 }
 .nav .nav-container .menu-toggle .nav-menu .dropdown ul.show {
   display: flex;
   max-height: 40rem;
 }
-@media (min-width: 1200px) {
-  .nav .nav-container .menu-toggle .nav-menu .dropdown ul li {
-    padding: 0.7rem;
-    background-color: rgb(16, 118, 201);
-    position: relative;
-  }
+.nav .nav-container .menu-toggle .nav-menu .dropdown ul li {
+  padding: 0.7rem;
+  background-color: rgb(16, 118, 201);
+  position: relative;
 }
 .nav .nav-container .menu-toggle .nav-menu .dropdown ul li a {
   display: block;
@@ -404,24 +413,25 @@ ul {
   text-decoration: none;
   color: #fff;
 }
-@media (min-width: 1200px) {
-  .nav .nav-container .menu-toggle .nav-menu .dropdown ul li a {
-    text-transform: capitalize;
-  }
+.nav .nav-container .menu-toggle .nav-menu .dropdown ul .dropdown:hover > ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1199px) {
   .nav .nav-container .menu-toggle .nav-menu .dropdown ul .dropdown:hover > ul {
-    position: absolute;
-    top: 0;
-    left: 100%;
+    position: initial;
   }
 }
-@media (min-width: 1200px) {
+.nav .nav-container .menu-toggle .nav-menu .dropdown ul .dropdown ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: all 0.4s ease-in-out;
+}
+@media (max-width: 1199px) {
   .nav .nav-container .menu-toggle .nav-menu .dropdown ul .dropdown ul {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    transition: all 0.4s ease-in-out;
+    position: initial;
   }
 }
 .nav .nav-container .showing {

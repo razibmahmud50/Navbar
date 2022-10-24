@@ -1,3 +1,11 @@
+//destroy menu
+let navDestroy = ()=>{
+  document.querySelectorAll("nav-menu .active, .nav-menu .show").forEach((activeItem)=>{
+    activeItem.classList.remove("active")
+    activeItem.classList.remove("show")
+  })
+}
+
 // Prevent showing animation on window resize
 let resizeTimer;
 window.addEventListener("resize", () => {
@@ -17,6 +25,7 @@ navToggle.addEventListener('click', function (e) {
   this.classList.toggle('open');
   menuToggle.classList.toggle('active');
   e.stopPropagation();
+  navDestroy()
 });
 
 //get all sibling
@@ -25,13 +34,7 @@ function getAllSiblings(element, parent) {
   return children.filter(child => child !== element);
 }
 
-//destroy menu
-let navDestroy = ()=>{
-  document.querySelectorAll("nav-menu .active, .nav-menu .show").forEach((activeItem)=>{
-    activeItem.classList.remove("active")
-    activeItem.classList.remove("show")
-  })
-}
+
 
 window.addEventListener("click", ()=>{
   navDestroy()
