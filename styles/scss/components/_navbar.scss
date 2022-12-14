@@ -1,6 +1,28 @@
-.nav {
-  .nav-container {
-    background-color: #0984e3;
+//reboot css
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+ul{
+  padding-left: 0;
+}
+// navbar style
+.main-navbar {
+  .d-none{
+    display: none;
+  } 
+
+  .d-inline-flex{
+    display: inline-flex;
+  }
+  &__container {
+    background-color: #2d3748;
     max-width: 100%;
     margin: auto;
     display: flex;
@@ -12,23 +34,45 @@
       padding: 20px;
       flex-direction: column;
       align-items: stretch;
+      padding: 0;
+      background-color: unset;
     }
 
-    .nav-mobile {
+    .navbar-mobile {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @media(min-width:768px)and(max-width:1199px){
+        flex-direction: row-reverse;
+      }
+      @media(max-width:1199px){
+        padding: 12px;
+        background-color: #2d3748;
+      }
       .nav-logo {
         font-size: 1.5rem;
         font-weight: 700;
         color: #ffffff;
       }
       .nav-btn {
-        display: none;
-        @media (max-width: 1199px) {
-          display: block;
+        display: inline-flex;
+        align-items: center;
+        gap:8px;
+        @media(min-width:768px)and(max-width:1199px){
+          flex-direction: row-reverse;
         }
-        .nav-toggle {
+        @media (min-width: 1200px) {
+          display: none;
+        }
+        .btn-back{
+          justify-content: center;
+          align-items: center;
+          width: 25px;
+          height: 24px;
+          padding: 2px;
+          border: 1px solid #fff;
+        }
+        .btn-toggle {
           display: inline-block;
           background-color: transparent;
           width: 40px;
@@ -68,7 +112,7 @@
       }
     }
 
-    .menu-toggle {
+    .navbar-toggle {
       display: flex;
       max-height: 100vh;
       overflow: visible;
@@ -78,18 +122,27 @@
         overflow: hidden;
         transition: all 0.4s ease;
       }
-
+      
       &.active {
         max-height: 100vh;
-        transition: all 0.4s ease;
+        @media(max-width:1199px){
+          overflow: visible;
+        }
       }
-      .nav-menu {
+      &__inner {
         display: flex;
         flex-direction: row;
         margin: 0;
         max-height: 100%;
         @media(max-width:1199px){
           flex-direction: column;
+          position: relative;
+          width: 33.333333%;
+        }
+        @media(max-width:767px){
+          flex-direction: column;
+          position: relative;
+          width: 100%;
         }
         
         li {
@@ -97,7 +150,7 @@
           position: relative;
           padding: 12px;
           cursor: pointer;
-          background-color: #0984e3;
+          background-color: #2d3748;
           border-left: 1px solid #fff;
           border-right: 1px solid #fff;
           @media(max-width:1199px){
@@ -123,6 +176,9 @@
         }
         .dropdown {
           position: relative;
+          @media(max-width:1199px){
+            position: static;
+          }
           > a::after {
             content: "";
             background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2ZmZiIgY2xhc3M9ImJpIGJpLWNoZXZyb24tZG93biIgdmlld0JveD0iMCAwIDE2IDE2Ij4NCiAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMS42NDYgNC42NDZhLjUuNSAwIDAgMSAuNzA4IDBMOCAxMC4yOTNsNS42NDYtNS42NDdhLjUuNSAwIDAgMSAuNzA4LjcwOGwtNiA2YS41LjUgMCAwIDEtLjcwOCAwbC02LTZhLjUuNSAwIDAgMSAwLS43MDh6Ii8+DQo8L3N2Zz4=");
@@ -133,6 +189,9 @@
             display: inline-block;
             position: absolute;
             right: 10px;
+            @media(max-width:1199px){
+              transform: rotate(-90deg);
+            }
           }
           ul {
             display: flex;
@@ -147,8 +206,11 @@
             left: 0;
             min-width: 200px;
             @media (max-width: 1199px) {
-              position: static;
-              margin-top: 12px;
+              position: absolute;
+              left: 100%;
+              top: 0;
+              margin-top: 0;
+              width: 100%;
             }
 
             &.show {
@@ -157,8 +219,11 @@
             }
             li {
               padding: 0.7rem;
-              background-color: rgb(16, 118, 201);
+              background-color: #2d3748;
               position: relative;
+              @media(max-width:1199px){
+                position: initial;
+              }
               a {
                 display: block;
                 font-size: 0.875rem;
@@ -173,7 +238,7 @@
                 top: 0;
                 left: 100%;
                 @media (max-width: 1199px) {
-                  position: initial;
+                  position: absolute;
                 }
               }
               ul {
@@ -183,6 +248,9 @@
                 transition: all 0.4s ease-in-out;
                 @media (max-width: 1199px) {
                   position: initial;
+                }
+                @media (max-width: 1199px) {
+                  position: absolute;
                 }
               }
             }
